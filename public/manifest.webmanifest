@@ -1,0 +1,19 @@
+{
+  "name": "Arma tus equipos",
+  "short_name": "Equipos",
+  "description": "Arma equipos random para fútbol 5 o 6 y compartí los resultados.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1e7a34",
+  "theme_color": "#1e7a34",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

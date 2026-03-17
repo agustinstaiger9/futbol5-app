@@ -1,0 +1,292 @@
+:root {
+  --pitch-green: #1e7a34;
+  --pitch-line: #dfffd8;
+  --text-light: #ffffff;
+  --badge-gk: #ffecb3;
+  --badge-def: #bbdefb;
+  --badge-mid: #c8e6c9;
+  --badge-fw: #ffcdd2;
+  --shadow-soft: 0 10px 20px rgba(0, 0, 0, 0.25);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--pitch-green);
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 16px;
+}
+
+.app-root {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.pitch-container {
+  width: 100%;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    var(--pitch-green);
+  background-size: 40px 40px;
+  border-radius: 24px;
+  padding: 16px;
+  color: var(--text-light);
+  box-shadow: var(--shadow-soft);
+}
+
+.title {
+  text-align: center;
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.title-ball {
+  display: inline-block;
+  margin-left: 4px;
+  animation: spin-ball 1.4s linear infinite;
+}
+
+@keyframes spin-ball {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.toggle-button {
+  border-radius: 999px;
+  border: 1px solid var(--pitch-line);
+  background: transparent;
+  color: var(--pitch-line);
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle-button-active {
+  background: var(--pitch-line);
+  color: var(--pitch-green);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0;
+  text-align: center;
+}
+
+.players-inputs {
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.list-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 6px 0 10px;
+}
+
+.small-button {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--text-light);
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.small-button:hover {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.small-button.danger {
+  border-color: rgba(255, 180, 180, 0.8);
+  color: #ffecec;
+}
+
+.player-input {
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.player-input:focus {
+  outline: 2px solid var(--pitch-line);
+}
+
+.error {
+  color: #ffebee;
+  font-size: 13px;
+  margin: 4px 0 8px;
+}
+
+.actions-row {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0 10px;
+}
+
+.generate-button {
+  flex: 1;
+  border-radius: 12px;
+  border: none;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4a3c00;
+  background: #ffd54f;
+  cursor: pointer;
+}
+
+.generate-button:hover {
+  filter: brightness(1.05);
+}
+
+.share-button {
+  min-width: 110px;
+  border-radius: 12px;
+  border: 1px solid var(--pitch-line);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--pitch-line);
+  cursor: pointer;
+}
+
+.share-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.whatsapp-button {
+  min-width: 110px;
+  border-radius: 12px;
+  border: none;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  background: #25d366;
+  color: #0b1a10;
+  cursor: pointer;
+}
+
+.whatsapp-button:hover {
+  filter: brightness(1.05);
+}
+
+.pitch-wrapper {
+  margin-top: 4px;
+}
+
+.teams-row {
+  display: flex;
+  gap: 8px;
+}
+
+.team-column {
+  flex: 1;
+}
+
+.team-name {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.pitch {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 16px;
+  border: 2px solid var(--pitch-line);
+  padding: 6px 4px;
+}
+
+.line-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.player-badge {
+  min-width: 60px;
+  padding: 4px 6px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-badge.gk {
+  background: var(--badge-gk);
+}
+
+.player-badge.def {
+  background: var(--badge-def);
+}
+
+.player-badge.mid {
+  background: var(--badge-mid);
+}
+
+.player-badge.fw {
+  background: var(--badge-fw);
+}
+
+.player-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #222;
+}
+
+.position-text {
+  font-size: 10px;
+  color: #333;
+}
+
+@media (max-width: 480px) {
+  .pitch-container {
+    padding: 12px;
+  }
+
+  .players-inputs {
+    max-height: 220px;
+  }
+}
